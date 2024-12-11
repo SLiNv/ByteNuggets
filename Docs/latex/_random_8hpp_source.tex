@@ -1,0 +1,75 @@
+\doxysection{Random.\+hpp}
+\hypertarget{_random_8hpp_source}{}\label{_random_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ RANDOM\_MT\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ RANDOM\_MT\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_random}{Random}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{inline}\ std::mt19937\ \mbox{\hyperlink{namespace_random_a00531c42906741611a38c489e8723280}{generate}}()}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::random\_device\ rd\{\};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ seed\_seq\ with\ clock\ and\ 7\ random\ numbers\ from\ std::random\_device}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::seed\_seq\ ss\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}std::seed\_seq::result\_type\textcolor{keyword}{>}(}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::steady\_clock::now().time\_since\_epoch().count()),}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rd(),\ rd(),\ rd(),\ rd(),\ rd(),\ rd(),\ rd()}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::mt19937\{\ ss\ \};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ Our\ global\ std::mt19937\ object}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{inline}\ std::mt19937\ mt\{\ \mbox{\hyperlink{namespace_random_a00531c42906741611a38c489e8723280}{generate}}()\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_random_ac314ba855471ee40bba7b82233fc4833}{randint}}(\textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::uniform\_int\_distribution\{\ min,\ max\ \}(mt);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00064\ \ \ \ \ T\ \mbox{\hyperlink{namespace_random_a9b1f5ae61d4f201172052d8cdca61f00}{randNum}}(T\ min,\ T\ max)}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::uniform\_int\_distribution<T>\ \{\ min,\ max\ \}(mt);}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ R,\ \textcolor{keyword}{typename}\ S,\ \textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00080\ \ \ \ \ R\ \mbox{\hyperlink{namespace_random_a9b1f5ae61d4f201172052d8cdca61f00}{randNum}}(S\ min,\ T\ max)}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_random_a9b1f5ae61d4f201172052d8cdca61f00}{randNum<R>}}(\textcolor{keyword}{static\_cast<}R\textcolor{keyword}{>}(min),\ \textcolor{keyword}{static\_cast<}R\textcolor{keyword}{>}(max));}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !RANDOM\_MT\_H}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00089\ \textcolor{comment}{Example:}}
+\DoxyCodeLine{00090\ \textcolor{comment}{}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ \ \ \ std::cout\ <<\ "{}r0:\ "{}\ <<\ Random::randint(1,\ 6)\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{00092\ \textcolor{comment}{}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ \ \ \ unsigned\ short\ a\ =\ 1,\ b\ =\ 10;}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ \ \ \ //\ r1\ is\ short\ via\ template\ argument\ deduction}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ \ \ \ auto\ r1\ =\ Random::randNum(a,\ b);}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ \ \ \ std::cout\ <<\ "{}r1:\ "{}\ <<\ r1\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{00097\ \textcolor{comment}{}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ \ \ \ //\ int\ obviously\ [-\/3,\ -\/2]}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ \ \ \ auto\ r2\ =\ Random::randNum<int>(-\/3,\ 0xFFFFFFFFFFFFFFFEULL);}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ \ \ \ std::cout\ <<\ "{}r2:\ "{}\ <<\ r2\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{00101\ \textcolor{comment}{}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ \ \ \ //\ size\_t\ obviously}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ \ \ \ auto\ r3\ =\ Random::randNum<size\_t>(1,\ 6u);}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ \ \ \ std::cout\ <<\ "{}r3:\ "{}\ <<\ r3\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{00105\ \textcolor{comment}{*/}}
+
+\end{DoxyCode}

@@ -1,0 +1,119 @@
+\doxysection{Random Namespace Reference}
+\hypertarget{namespace_random}{}\label{namespace_random}\index{Random@{Random}}
+
+
+\doxylink{namespace_random}{Random} namespace contains a self-\/seeding Mersenne Twister.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mt19937 \mbox{\hyperlink{namespace_random_a00531c42906741611a38c489e8723280}{generate}} ()
+\begin{DoxyCompactList}\small\item\em Create a seeded Mersenne Twister. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespace_random_ac314ba855471ee40bba7b82233fc4833}{randint}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Generate a random int between \mbox{[}min, max\mbox{]} (inclusive) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespace_random_a9b1f5ae61d4f201172052d8cdca61f00}{rand\+Num}} (T min, T max)
+\begin{DoxyCompactList}\small\item\em Generate a random number between \mbox{[}min, max\mbox{]} of type chosen. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename R , typename S , typename T $>$ }\\R \mbox{\hyperlink{namespace_random_a2a60ab2f9c2e9cd5e4af0a0f0b19a66d}{rand\+Num}} (S min, T max)
+\begin{DoxyCompactList}\small\item\em Generate a random value between \mbox{[}min, max\mbox{]} while min and max are different types. Must explicitly specify return type as template type argument. min and max will be static\+\_\+cast to R. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespace_random_aa4354db31fa7d64040939b905ab12ee1}\label{namespace_random_aa4354db31fa7d64040939b905ab12ee1} 
+std\+::mt19937 {\bfseries mt} \{ \mbox{\hyperlink{namespace_random_a00531c42906741611a38c489e8723280}{generate}}() \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{namespace_random}{Random} namespace contains a self-\/seeding Mersenne Twister. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_random_a00531c42906741611a38c489e8723280}\index{Random@{Random}!generate@{generate}}
+\index{generate@{generate}!Random@{Random}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily \label{namespace_random_a00531c42906741611a38c489e8723280} 
+std\+::mt19937 Random\+::generate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a seeded Mersenne Twister. 
+
+\begin{DoxyReturn}{Returns}
+a seeded Mersenne Twister 
+\end{DoxyReturn}
+\Hypertarget{namespace_random_ac314ba855471ee40bba7b82233fc4833}\index{Random@{Random}!randint@{randint}}
+\index{randint@{randint}!Random@{Random}}
+\doxysubsubsection{\texorpdfstring{randint()}{randint()}}
+{\footnotesize\ttfamily \label{namespace_random_ac314ba855471ee40bba7b82233fc4833} 
+int Random\+::randint (\begin{DoxyParamCaption}\item[{int}]{min}{, }\item[{int}]{max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generate a random int between \mbox{[}min, max\mbox{]} (inclusive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & minimum number \\
+\hline
+{\em max} & maximum number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a random int between \mbox{[}min, max\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{namespace_random_a2a60ab2f9c2e9cd5e4af0a0f0b19a66d}\index{Random@{Random}!randNum@{randNum}}
+\index{randNum@{randNum}!Random@{Random}}
+\doxysubsubsection{\texorpdfstring{randNum()}{randNum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespace_random_a2a60ab2f9c2e9cd5e4af0a0f0b19a66d} 
+template$<$typename R , typename S , typename T $>$ \\
+R Random\+::rand\+Num (\begin{DoxyParamCaption}\item[{S}]{min}{, }\item[{T}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Generate a random value between \mbox{[}min, max\mbox{]} while min and max are different types. Must explicitly specify return type as template type argument. min and max will be static\+\_\+cast to R. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em R} & type of the return value \\
+\hline
+{\em S} & type of the minimun value \\
+\hline
+{\em T} & type of the maximum value \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em min} & minimum value \\
+\hline
+{\em max} & maximum value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a random value of type R between \mbox{[}min, max\mbox{]} 
+\end{DoxyReturn}
+\Hypertarget{namespace_random_a9b1f5ae61d4f201172052d8cdca61f00}\index{Random@{Random}!randNum@{randNum}}
+\index{randNum@{randNum}!Random@{Random}}
+\doxysubsubsection{\texorpdfstring{randNum()}{randNum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespace_random_a9b1f5ae61d4f201172052d8cdca61f00} 
+template$<$typename T $>$ \\
+T Random\+::rand\+Num (\begin{DoxyParamCaption}\item[{T}]{min}{, }\item[{T}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Generate a random number between \mbox{[}min, max\mbox{]} of type chosen. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of the random value you want to generate \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em min} & minimum value \\
+\hline
+{\em max} & maximum value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a random value of type T between \mbox{[}min, max\mbox{]} 
+\end{DoxyReturn}

@@ -13,6 +13,9 @@
 #include <random>
 #include <chrono>
 
+/**
+ * @brief Random namespace contains a self-seeding Mersenne Twister
+*/
 namespace Random
 {
     /**
@@ -71,7 +74,7 @@ namespace Random
      * @tparam T type of the maximum value
      * @param min minimum value
      * @param max maximum value
-     * @return a random value of type T between [min, max]
+     * @return a random value of type R between [min, max]
      */
     template <typename R, typename S, typename T>
     R randNum(S min, T max)

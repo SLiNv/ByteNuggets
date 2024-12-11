@@ -1,0 +1,39 @@
+\doxysection{Random.\+hpp File Reference}
+\hypertarget{_random_8hpp}{}\label{_random_8hpp}\index{Random.hpp@{Random.hpp}}
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_random}{Random}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_random_8hpp_a1818a7a0f1d107adf93681e3ebdf74b3}{RANDOM\+\_\+\+MT\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mt19937 \mbox{\hyperlink{namespace_random_a00531c42906741611a38c489e8723280}{Random\+::generate}} ()
+\begin{DoxyCompactList}\small\item\em Create a seeded Mersenne Twister. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespace_random_ac314ba855471ee40bba7b82233fc4833}{Random\+::randint}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Generate a random int between \mbox{[}min, max\mbox{]} (inclusive) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespace_random_a9b1f5ae61d4f201172052d8cdca61f00}{Random\+::rand\+Num}} (T min, T max)
+\begin{DoxyCompactList}\small\item\em Generate a random number between \mbox{[}min, max\mbox{]} of type chosen. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename R , typename S , typename T $>$ }\\R \mbox{\hyperlink{namespace_random_a2a60ab2f9c2e9cd5e4af0a0f0b19a66d}{Random\+::rand\+Num}} (S min, T max)
+\begin{DoxyCompactList}\small\item\em Generate a random value between \mbox{[}min, max\mbox{]} while min and max are different types. Must explicitly specify return type as template type argument. min and max will be static\+\_\+cast to R. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mt19937 \mbox{\hyperlink{namespace_random_aa4354db31fa7d64040939b905ab12ee1}{Random\+::mt}} \{ \mbox{\hyperlink{namespace_random_a00531c42906741611a38c489e8723280}{generate}}() \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_random_8hpp_a1818a7a0f1d107adf93681e3ebdf74b3}\index{Random.hpp@{Random.hpp}!RANDOM\_MT\_H@{RANDOM\_MT\_H}}
+\index{RANDOM\_MT\_H@{RANDOM\_MT\_H}!Random.hpp@{Random.hpp}}
+\doxysubsubsection{\texorpdfstring{RANDOM\_MT\_H}{RANDOM\_MT\_H}}
+{\footnotesize\ttfamily \label{_random_8hpp_a1818a7a0f1d107adf93681e3ebdf74b3} 
+\#define RANDOM\+\_\+\+MT\+\_\+H}
+
