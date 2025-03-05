@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['example_0',['Example',['../class_my_library_1_1_example.html',1,'MyLibrary']]]
+  ['myhinternet_0',['MYHINTERNET',['../struct_m_y_h_i_n_t_e_r_n_e_t.html',1,'']]]
 ];

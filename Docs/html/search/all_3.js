@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['dark_20mode_0',['Disable Dark Mode',['../md__docs_2doxygen-awesome-css_2docs_2tricks.html#tricks-darkmode',1,'']]],
-  ['dark_20mode_20toggle_1',['Dark Mode Toggle',['../md__docs_2doxygen-awesome-css_2docs_2extensions.html#extension-dark-mode-toggle',1,'']]],
-  ['dependency_2',['npm/xpm dependency',['../md__docs_2doxygen-awesome-css_2_r_e_a_d_m_e.html#autotoc_md36',1,'']]],
-  ['deprecated_20list_3',['Deprecated List',['../deprecated.html',1,'']]],
-  ['diagrams_4',['Diagrams',['../class_my_library_1_1_example.html#autotoc_md24',1,'']]],
-  ['diagrams_20with_20graphviz_5',['Diagrams with Graphviz',['../md__docs_2doxygen-awesome-css_2docs_2tricks.html#tricks-graphviz',1,'']]],
-  ['disable_20dark_20mode_6',['Disable Dark Mode',['../md__docs_2doxygen-awesome-css_2docs_2tricks.html#tricks-darkmode',1,'']]],
-  ['doxygen_20awesome_7',['Doxygen Awesome',['../md__docs_2doxygen-awesome-css_2_r_e_a_d_m_e.html',1,'']]],
-  ['doxygen_20generator_8',['Doxygen generator',['../md__docs_2doxygen-awesome-css_2docs_2customization.html#autotoc_md4',1,'']]]
+  ['randint_0',['randint',['../namespace_random.html#ac314ba855471ee40bba7b82233fc4833',1,'Random']]],
+  ['randnum_1',['randNum',['../namespace_random.html#a9b1f5ae61d4f201172052d8cdca61f00',1,'Random::randNum(T min, T max)'],['../namespace_random.html#a2a60ab2f9c2e9cd5e4af0a0f0b19a66d',1,'Random::randNum(S min, T max)']]],
+  ['random_2',['Random',['../namespace_random.html',1,'']]]
 ];

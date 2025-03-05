@@ -1,8 +1,4 @@
 var annotated_dup =
 [
-    [ "MyLibrary", null, [
-      [ "Example", "class_my_library_1_1_example.html", "class_my_library_1_1_example" ],
-      [ "SecondExample", "class_my_library_1_1_second_example.html", null ],
-      [ "SubclassExample", "class_my_library_1_1_subclass_example.html", "class_my_library_1_1_subclass_example" ]
-    ] ]
+    [ "MYHINTERNET", "struct_m_y_h_i_n_t_e_r_n_e_t.html", null ]
 ];

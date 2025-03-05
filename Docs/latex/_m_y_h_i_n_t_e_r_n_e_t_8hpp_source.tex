@@ -1,0 +1,53 @@
+\doxysection{MYHINTERNET.\+hpp}
+\hypertarget{_m_y_h_i_n_t_e_r_n_e_t_8hpp_source}{}\label{_m_y_h_i_n_t_e_r_n_e_t_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ HINTERNET\ m\_handle\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}()\ \textcolor{keyword}{noexcept}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}(HINTERNET\ h)\ noexcept\ :\ m\_handle(h)\ \{\}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{/*\ Move\ constructor\ and\ move\ assignment\ operator\ can\ be\ optional\ in\ a\ }}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ \ \ *\ minimal\ implementation\ if\ you\ know\ what\ you\ are\ doing}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Move\ constructor\ transfers\ ownership.}}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}(\mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}\&\&\ other)\ noexcept\ :\ m\_handle(other.m\_handle)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ other.m\_handle\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Move\ assignment\ operator\ transfers\ ownership.}}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}\&\ operator=(\mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}\&\&\ other)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&other)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_handle)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InternetCloseHandle(m\_handle);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ m\_handle\ =\ other.m\_handle;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ other.m\_handle\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Assignment\ operator\ for\ HINTERNET}}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}\&\ operator=(HINTERNET\ h)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_handle\ !=\ h)\ \{\ \ \textcolor{comment}{//\ Guard\ against\ self-\/assignment}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ InternetCloseHandle(m\_handle);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ m\_handle\ =\ h;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Deleted\ copy\ operations}}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{MYHINTERNET}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Destructor\ releases\ the\ handle}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{struct_m_y_h_i_n_t_e_r_n_e_t}{\string~MYHINTERNET}}()\ \{\ INET\_CLOSE\_HANDLE(m\_handle);\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ conversion\ operator\ to\ allow\ using\ the\ object\ where\ HINTERNET\ is\ required}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{operator}\ HINTERNET()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ m\_handle;\ \}}
+\DoxyCodeLine{00051\ \};}
+
+\end{DoxyCode}

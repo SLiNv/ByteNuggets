@@ -1,7 +1,10 @@
 var NAVTREEINDEX0 =
 {
-"_random_8hpp_source.html":[2,0,0],
-"files.html":[2,0],
+"_m_y_h_i_n_t_e_r_n_e_t_8hpp_source.html":[3,0,0],
+"_random_8hpp_source.html":[3,0,1],
+"annotated.html":[2,0],
+"classes.html":[2,1],
+"files.html":[3,0],
 "index.html":[],
 "md__r_e_a_d_m_e.html":[0],
 "namespace_random.html":[1,0,0],
@@ -12,5 +15,6 @@ var NAVTREEINDEX0 =
 "namespacemembers.html":[1,1,0],
 "namespacemembers_func.html":[1,1,1],
 "namespaces.html":[1,0],
-"pages.html":[]
+"pages.html":[],
+"struct_m_y_h_i_n_t_e_r_n_e_t.html":[2,0,0]
 };

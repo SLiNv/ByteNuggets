@@ -33,6 +33,10 @@ var NAVTREE =
         [ "Functions", "namespacemembers_func.html", null ]
       ] ]
     ] ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ]
     ] ]
@@ -41,7 +45,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_random_8hpp_source.html"
+"_m_y_h_i_n_t_e_r_n_e_t_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
